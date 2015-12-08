@@ -5,11 +5,11 @@
 	{{outlet}}
 {{else}}
 	{{#if auth_asked}}
-	  <button {{action 'login'}}>Log in</button>
-	{{else}}
 		<p>Paste your 500px oauth access token here</p>
 	  {{input value=oauth_token_temp}}
 		<button {{action 'save_access_token' }}>Save</button>
+	{{else}}
+	  <button {{action 'login'}}>Log in</button>
 	{{/if}}
 {{/if}}
 
