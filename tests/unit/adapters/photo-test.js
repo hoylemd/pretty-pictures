@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('adapter:fivehundredpx', 'Unit | Adapter | fivehundredpx', {
+moduleFor('adapter:photo', 'Unit | Adapter | photo', {
 });
 
 test('it exists', function(assert) {
