@@ -13,6 +13,7 @@ You will need the following things properly installed on your computer.
 * [Bower](http://bower.io/)
 * [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
+* [Bundler](http://bundler.io/)
 * [Ruby](https://www.ruby-lang.org/en/) (for integration testing)
 
 ## Installation
