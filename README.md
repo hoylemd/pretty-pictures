@@ -1,7 +1,8 @@
 # Pretty-pictures
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a pretty simple app to view the top 100 pretty pictures on 500px.
+The rest of this README is mostly the default ember app readme.
+It will be updated as it falls out of truthiness.
 
 ## Prerequisites
 
@@ -41,13 +42,5 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+* just do the Installation and Running sections in the environment you'd like to run it in.
+* TODO: make an actual deployment process
