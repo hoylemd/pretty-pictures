@@ -13,6 +13,7 @@ You will need the following things properly installed on your computer.
 * [Bower](http://bower.io/)
 * [Ember CLI](http://www.ember-cli.com/)
 * [PhantomJS](http://phantomjs.org/)
+* [Ruby](https://www.ruby-lang.org/en/) (for integration testing)
 
 ## Installation
 
@@ -30,10 +31,18 @@ You will need the following things properly installed on your computer.
 
 Make use of the many generators for code, try `ember help generate` for more details
 
-### Running Tests
+### Running Unit Tests
 
 * `ember test`
 * `ember test --server`
+
+### Installing Integration Tests
+
+* `bundle install`
+
+### Running Integration Tests
+
+* `bundle exec cucumber`
 
 ### Building
 
