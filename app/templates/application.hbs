@@ -2,14 +2,6 @@
 <h3 class="headline">{{app_headline}}</h3>
 {{#if oauth_token }}
   <button {{action 'logout'}}>Log out</button>
-	{{outlet}}
-{{else}}
-	{{#if auth_requested}}
-		<p>Paste your 500px oauth access token here</p>
-	  {{input value=oauth_token_temp}}
-		<button {{action 'save_access_token' }}>Save</button>
-	{{else}}
-	  <button {{action 'login'}}>Log in</button>
-	{{/if}}
 {{/if}}
+{{outlet}}
 
