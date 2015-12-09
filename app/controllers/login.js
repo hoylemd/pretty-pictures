@@ -31,7 +31,7 @@ export default Ember.Controller.extend({
           controller.set('oauth_token_temp', '');
           controller.set('auth_requested', false);
         });
-      this.send('complete_authorization', token);
+      return true;
     }
   }
 });

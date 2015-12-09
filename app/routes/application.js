@@ -15,12 +15,11 @@ export default Ember.Route.extend({
     return {oauth_token: this.get('oauth_token')};
   },
   actions: {
-    'complete_authorization': function(token){
+    'save_access_token': function(){
       var route = this;
-      this.set('oauth_token', token);
       this.transitionTo('home').then(function () {
         route.refresh();
-      })
+      });
     },
     'logout': function() {
       var route = this;
