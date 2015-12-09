@@ -13,6 +13,7 @@ function cookie_mock () {
     },
     setCookie: function(key, value) {
       this.cookies[key] = value;
+      return {then: sinon.stub()};
     }
   };
 }
@@ -29,7 +30,7 @@ test('login action sets auth_requested flag', function(assert) {
 
 test('login action opens window to auth request', function(assert) {
   var sut = this.subject(),
-    expected_url = 'https://api.500px.com/api/js-sdk/authorize?sdk_key=
+    expected_url = 'https://api.500px.com/api/js-sdk/authorize?sdk_key=';
 
   sut.set('sdk_key', 'foo');
   expected_url += 'foo';
@@ -42,7 +43,7 @@ test('login action opens window to auth request', function(assert) {
 
 test('save_access_token saves the token in the cookie', function(assert) {
   assert.expect(2);
-  var sut = this.subject(),
+  var sut = this.subject({'model': {'oauth_token': ''}}),
     cookie_stub = cookie_mock();
   sut.set('cookie', cookie_stub);
 
