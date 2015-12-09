@@ -2,6 +2,7 @@
 <h3 class="headline">{{app_headline}}</h3>
 
 {{#if oauth_token }}
+  <button {{action 'logout'}}>Log out</button>
 	{{outlet}}
 {{else}}
 	{{#if auth_requested}}

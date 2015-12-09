@@ -23,6 +23,9 @@ export default Ember.Controller.extend({
                   ',menu=no,location=yes,scrollbars=no,status=no,toolbar=no');
       this.set('auth_requested', true);
     },
+    'logout': function () {
+      this.get('cookie').setCookie('oauth_token', '');
+    },
     'save_access_token': function () {
       var cookie = this.get('cookie'),
           token = this.get('oauth_token_temp'),
