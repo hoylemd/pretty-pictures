@@ -7,10 +7,11 @@ export default Ember.Controller.extend({
   oauth_token_temp: "",
   oauth_token: Ember.computed.alias('model.oauth_token'),
   auth_requested: false,
+  sdk_key = '2dfd95b628eadeeee64dc57b6094323ea04fc3a2',
 
   actions: {
     'login' : function() {
-      var sdk_key = '2dfd95b628eadeeee64dc57b6094323ea04fc3a2',
+      var sdk_key = this.get('sdk_key'),
         site_url = 'https://api.500px.com/api/js-sdk/authorize',
         left_offset = (screen.width / 2) - (1240 / 2),
         top_offset = (screen.height / 2) - (480 / 2),
