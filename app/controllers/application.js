@@ -25,6 +25,7 @@ export default Ember.Controller.extend({
     },
     'logout': function () {
       this.get('cookie').setCookie('oauth_token', '');
+      this.set('oauth_token', '');
     },
     'save_access_token': function () {
       var cookie = this.get('cookie'),
@@ -34,7 +35,8 @@ export default Ember.Controller.extend({
       this.set('oauth_token', token);
       cookie.setCookie('oauth_token', token)
         .then(function() {
-          controller.set('app_headline', 'you are logged in!');
+          controller.set('oauth_token_temp', '');
+          controller.set('auth_requested', false);
         });
     }
   }
