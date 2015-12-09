@@ -1,9 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  app_name: "Pretty Pictures",
-  app_headline: "The 100 prettiest pictures on 500px!",
-
   beforeModel: function() {
     var cookie = this.get('cookie'),
       token = cookie.getCookie('oauth_token');

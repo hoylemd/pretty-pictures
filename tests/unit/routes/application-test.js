@@ -19,16 +19,30 @@ function cookie_mock () {
 
 test('beforeModel sets oauth token from cookie', function (assert) {
   assert.expect(2);
-  var route = this.subject(),
+  var sut = this.subject(),
     cookie_stub = cookie_mock();
-  route.set('cookie', cookie_stub);
+  sut.set('cookie', cookie_stub);
 
-  route.beforeModel();
-  assert.ok(!route.get('oauth_token'),
+  sut.beforeModel();
+  assert.ok(!sut.get('oauth_token'),
             "doesn't set the oauth_token if it is not in a cookie");
   cookie_stub.setCookie('oauth_token', 'hoopydoop');
-  route.beforeModel();
-  assert.ok(route.get('oauth_token'),
+  sut.beforeModel();
+  assert.ok(sut.get('oauth_token'),
             "sets the oauth_token if it is in a cookie");
+});
+
+test('model returns the token', function(assert) {
+  assert.expect(2);
+  var sut = this.subject(),
+    model = sut.model();
+
+
+  assert.equal(model['oauth_token'], undefined,
+               'Returns undefined before if it is not set');
+  sut.set('oauth_token', 'jumping_pandas');
+  model = sut.model();
+  assert.equal(model['oauth_token'], 'jumping_pandas',
+               'Returns filled token before if it is set');
 });
 

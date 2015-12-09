@@ -3,9 +3,10 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   app_name: "Pretty Pictures",
   app_headline: "The 100 prettiest pictures on 500px!",
+
   oauth_token_temp: "",
   oauth_token: Ember.computed.alias('model.oauth_token'),
-  auth_asked: false,
+  auth_requested: false,
 
   actions: {
     'login' : function() {
@@ -19,7 +20,7 @@ export default Ember.Controller.extend({
                   'width=1240,height=480,left=' + left_offset + ',top=' +
                   top_offset +
                   ',menu=no,location=yes,scrollbars=no,status=no,toolbar=no');
-      this.set('auth_asked', true);
+      this.set('auth_requested', true);
     },
     'save_access_token': function () {
       var cookie = this.get('cookie'),
