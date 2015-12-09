@@ -9,10 +9,10 @@ export default Ember.Route.extend({
       token = cookie.getCookie('oauth_token');
 
     if(token) {
-      this.set('oauth_token', token)
+      this.set('oauth_token', token);
     }
   },
   model: function() {
-    return {oauth_token: this.get('oauth_token')}
+    return {oauth_token: this.get('oauth_token')};
   }
- })
+ });
