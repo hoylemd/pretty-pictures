@@ -24,8 +24,12 @@ export default Ember.Controller.extend({
       this.set('auth_requested', true);
     },
     'logout': function () {
-      this.get('cookie').setCookie('oauth_token', '');
-      this.set('oauth_token', '');
+      var controller = this;
+      controller.set('oauth_token', '');
+      this.get('cookie').setCookie('oauth_token', '').then(function () {
+        controller.set('oauth_token_temp', '');
+        controller.set('auth_requested', false);
+      });
     },
     'save_access_token': function () {
       var cookie = this.get('cookie'),
